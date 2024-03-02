@@ -26,8 +26,8 @@ class ArListPages extends StatelessWidget {
                                 size: 0.02,
                               )));
                 } else if (Platform.isAndroid) {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ARWidget()));
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (context) => ARWidget()));
                 }
               },
               child: Container(
@@ -50,8 +50,8 @@ class ArListPages extends StatelessWidget {
                                 size: 0.07,
                               )));
                 } else if (Platform.isAndroid) {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ARWidget()));
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (context) => ARWidget()));
                 }
               },
               child: Container(

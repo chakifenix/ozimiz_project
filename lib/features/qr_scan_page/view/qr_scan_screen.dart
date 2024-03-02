@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:ozimiz_project/features/login_phone_or_sign/view/sign_up_or_login.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
@@ -46,19 +47,23 @@ class _QRScanPageState extends State<QRScanPage> {
           SizedBox(
             width: 200.w,
             height: 200.h,
-            child: Center(
-              child: QRView(
-                key: qrKey,
-                onQRViewCreated: _onQRViewCreated,
-                overlay: QrScannerOverlayShape(
-                    borderColor: Colors.red,
-                    borderRadius: 10.r,
-                    borderLength: 30.h,
-                    borderWidth: 10.w,
-                    cutOutSize: MediaQuery.of(context).size.width * 0.8,
-                    overlayColor: Colors.black),
-              ),
-            ),
+            child: Center(child: MobileScanner(
+              onDetect: (barcodes) {
+                print(barcodes.raw);
+              },
+            )
+                // QRView(
+                //   key: qrKey,
+                //   onQRViewCreated: _onQRViewCreated,
+                //   overlay: QrScannerOverlayShape(
+                //       borderColor: Colors.red,
+                //       borderRadius: 10.r,
+                //       borderLength: 30.h,
+                //       borderWidth: 10.w,
+                //       cutOutSize: MediaQuery.of(context).size.width * 0.8,
+                //       overlayColor: Colors.black),
+                // ),
+                ),
           ),
           SizedBox(
             height: 20.h,
