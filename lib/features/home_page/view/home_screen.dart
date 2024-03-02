@@ -73,7 +73,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         MaterialPageRoute(builder: (context) => ArListPages()));
                   } else if (Platform.isAndroid) {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ARWidget()));
+                        MaterialPageRoute(builder: (context) => ArListPages()));
+                  } else {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ArListPages()));
                   }
                 },
                 child: Image.asset('images/scanner.png'),
@@ -373,7 +376,9 @@ class HomePage extends StatelessWidget {
                             color: Color(0xFFFF0505), fontSize: 21.sp),
                       ),
                       CountDownText(
-                        due: DateTime.utc(2025),
+                        due: DateTime.utc(
+                          2024,
+                        ),
                         finishedText: "Done",
                         showLabel: true,
                         longDateName: true,
