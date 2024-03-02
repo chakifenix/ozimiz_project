@@ -6,7 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ozimiz_project/features/ar_list_pages/view/ar_list_pages.dart';
-import 'package:ozimiz_project/features/ar_page/view/androidArCorePage.dart';
 import 'package:ozimiz_project/features/home_page/bloc/home_bloc.dart';
 import 'package:ozimiz_project/features/home_page/view/nav_model.dart';
 import 'package:ozimiz_project/features/home_page/widgets/nav_bar.dart';
@@ -68,16 +67,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(25.r)),
                 elevation: 0,
                 onPressed: () {
-                  if (Platform.isIOS) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ArListPages()));
-                  } else if (Platform.isAndroid) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ArListPages()));
-                  } else {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ArListPages()));
-                  }
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ArListPages()));
                 },
                 child: Image.asset('images/scanner.png'),
               ),
@@ -376,9 +367,7 @@ class HomePage extends StatelessWidget {
                             color: Color(0xFFFF0505), fontSize: 21.sp),
                       ),
                       CountDownText(
-                        due: DateTime.utc(
-                          2024,
-                        ),
+                        due: DateTime.utc(2024, 3, 2, 20, 30),
                         finishedText: "Done",
                         showLabel: true,
                         longDateName: true,

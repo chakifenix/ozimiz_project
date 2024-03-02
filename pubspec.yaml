@@ -23,8 +23,8 @@ dependencies:
   equatable: ^2.0.5
   arkit_plugin: ^1.0.7
   # arcore_flutter_plugin: ^0.1.0
-  arcore_flutter_plugin:
-    path: /Users/ayau/StudioProjects/arcore_flutter_plugin
+  # arcore_flutter_plugin:
+  #   path: /Users/ayau/StudioProjects/arcore_flutter_plugin
   qr_code_scanner: ^1.0.1
   mask_text_input_formatter: ^2.9.0
   path_provider: ^2.1.2

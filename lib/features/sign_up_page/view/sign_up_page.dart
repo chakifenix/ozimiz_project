@@ -27,6 +27,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     mask: '+# (###) ###-##-##',
   );
 
+  bool valueCheck = false;
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -126,6 +128,34 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               // print(fullNameController.text);
                               // print(phoneNumberController.text.substring(1));
                             }),
+                      ),
+                      Row(
+                        children: [
+                          Checkbox(
+                              value: valueCheck,
+                              onChanged: (value) {
+                                setState(() {
+                                  valueCheck = value!;
+                                });
+                              }),
+                          SizedBox(
+                              width: 300.w,
+                              child: Text.rich(
+                                TextSpan(
+                                  text: 'Даю согласие на обработку ',
+                                  children: [
+                                    TextSpan(
+                                      text: 'персональных данных',
+                                      style: TextStyle(
+                                        color: Colors.blue, // Цвет ссылки
+                                        decoration: TextDecoration
+                                            .underline, // Подчеркивание ссылки
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ))
+                        ],
                       )
                     ],
                   ),

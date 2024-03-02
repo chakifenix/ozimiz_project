@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:ozimiz_project/features/ar_page/view/androidArCorePage.dart';
 import 'package:ozimiz_project/features/ar_page/view/animatedCharacterScreen.dart';
 
 class ArListPages extends StatelessWidget {
