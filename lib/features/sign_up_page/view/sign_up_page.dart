@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,6 +9,7 @@ import 'package:ozimiz_project/features/otp_page/view/otp_screen.dart';
 import 'package:ozimiz_project/features/sign_up_page/bloc/signup_bloc.dart';
 import 'package:ozimiz_project/features/sign_up_page/bloc/signup_state.dart';
 import 'package:ozimiz_project/features/sign_up_page/repository/signup_repo.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SignUpScreen extends StatefulWidget {
   SignUpScreen({super.key});
@@ -28,6 +30,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   );
 
   bool valueCheck = false;
+
+  final url = Uri.parse('https://concierge-show.kz/privacy-policy');
 
   @override
   Widget build(BuildContext context) {
@@ -145,13 +149,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   text: 'Даю согласие на обработку ',
                                   children: [
                                     TextSpan(
-                                      text: 'персональных данных',
-                                      style: TextStyle(
-                                        color: Colors.blue, // Цвет ссылки
-                                        decoration: TextDecoration
-                                            .underline, // Подчеркивание ссылки
-                                      ),
-                                    ),
+                                        text: 'персональных данных',
+                                        style: TextStyle(
+                                          color: Colors.blue, // Цвет ссылки
+                                          decoration: TextDecoration
+                                              .underline, // Подчеркивание ссылки
+                                        ),
+                                        recognizer: TapGestureRecognizer()
+                                          ..onTap = () {
+                                            _launchURL(url);
+                                          }),
                                   ],
                                 ),
                               ))
@@ -172,5 +179,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
         ),
       ),
     );
+  }
+
+  _launchURL(Uri url) async {
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
