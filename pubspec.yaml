@@ -1,0 +1,63 @@
+name: ozimiz_project
+description: A new Flutter project.
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_screenutil: ^5.9.0
+  pinput: ^3.0.1
+  date_count_down: ^3.0.0
+  flutter_secure_storage: ^9.0.0
+  dio: ^5.4.1
+  flutter_bloc: ^8.1.4
+  equatable: ^2.0.5
+  arkit_plugin: ^1.0.7
+  # arcore_flutter_plugin: ^0.1.0
+  arcore_flutter_plugin:
+    path: /Users/ayau/StudioProjects/arcore_flutter_plugin
+  qr_code_scanner: ^1.0.1
+  mask_text_input_formatter: ^2.9.0
+  path_provider: ^2.1.2
+  shared_preferences: ^2.2.2
+  image_picker: ^1.0.7
+  flutter_launcher_icons: ^0.13.1
+  
+
+
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/consLogo.png"
+  remove_alpha_ios: true
+
+
+  flutter_lints: ^2.0.0
+
+
+flutter:
+
+  
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - images/
+
+  
